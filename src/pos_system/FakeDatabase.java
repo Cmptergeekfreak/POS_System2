@@ -19,7 +19,7 @@ public class FakeDatabase implements DataStorageStrategy {
                 new Product("26485", "WaterBottle", 12.65, new NoDiscount()),
                 new Product("35486", "T-shirt", 14.66, new PercentageDiscount(.15)),
                 new Product("48782", "Packer Hat", 13.99, new NoDiscount()),
-                new Product("135792", "Watch\t", 121.99, new NoDiscount())};
+                new Product("13572", "Watch\t", 121.99, new NoDiscount())};
 
     // Methods
     @Override

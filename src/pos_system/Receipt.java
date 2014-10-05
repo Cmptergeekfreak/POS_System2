@@ -17,7 +17,7 @@ public class Receipt {
     // Properties
     private LineItem[] lineItems;
     private final DataStorageStrategy dataStorage;
-    private final String thankyou = "Thank you for shopping with us!\n\n\n\n";
+    private final String thankyou = "Thank you for shopping at Kohl's with us. Please come back anytime! \n\n\n" ;
     
     //private ReceiptOutputStrategy receiptOutput;
 
@@ -66,18 +66,20 @@ public class Receipt {
         double subtotal = getOriginalPriceTotal();
         double discount = getDiscountTotal();
         double total = (getOriginalPriceTotal() - getDiscountTotal());
-
+    //    System.out.println("-----------------------------------------------" );
         // Displays lineItems
         for (LineItem item : lineItems) {
             double productDiscount = item.getProduct().getDiscountStrategy().getDiscount(item.getQty() 
                                     ,item.getProduct().getPrice());
             
-            System.out.println((int) item.getQty() + "  " + item.getProduct().getItemId() + "  " + item.getProduct().getDescription() + "  "
+            
+            System.out.println((int) item.getQty() + "  " + item.getProduct().getItemId() + " --  " + item.getProduct().getDescription() + "     "
                     + item.getProduct().getPrice() + "  " + (df.format((int) item.getQty() * item.getProduct().getPrice()))
-                    + "  " + df.format(productDiscount) + "\n");
-        }
+                    + "  " + "  " + df.format(productDiscount) + "\n" + "\n");
+            }
 
         // Process totals and discount
+        System.out.println("-----------------------------------------------");
         System.out.println("\t\t\t  Subtotal:     " + df.format(subtotal) + "\n"
                 +"\t\t\t  Discount:     -" + df.format(discount)+ "\n"
                 + "\t\t\t  Total:        " + df.format(total));

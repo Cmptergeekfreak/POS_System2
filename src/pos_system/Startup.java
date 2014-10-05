@@ -26,7 +26,7 @@ public class Startup {
         reg.addItemToSale("26485", 1);
         reg.addItemToSale("35486", 2);
         reg.addItemToSale("48782", 1);
-        reg.addItemToSale("135792", 1);
+        reg.addItemToSale("13572", 1);
         
         reg.endSale();
         
